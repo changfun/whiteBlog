@@ -1,9 +1,6 @@
 <template>
   <div class="index">
     <div class="center">
-      <!-- <div v-show="isShow=='p1'" class="text" :style="'width:'+num+'px'">
-        夏天的风 我永远记得
-      </div> -->
       <div class="text" :style="'width:'+num+'px'">
         {{ msg}}
       </div>
@@ -51,10 +48,13 @@ export default {
     top: 40%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    width: 400px;
+    padding-left: 260px;
+    width: 600px;
     height: 50px;
+    box-sizing: border-box;
    
     .text {
+      color: @tcolor;
       white-space: nowrap;
       overflow: hidden;
       transition: all 3s ease 0s;

@@ -28,10 +28,10 @@ export default {};
     width: 100%;
     .mega-item {
         p {
-            color: #333;
-            font-size: 14px;
+            color: @tcolor;
+            font-size: 16px;
             a {
-                color: #007ca9;
+                color: @acolor;
             }
         }
         img {

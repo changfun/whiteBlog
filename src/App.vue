@@ -5,141 +5,120 @@
         <div class="tit">
           <a href="http://zhangfine.top">张凡个人网站</a>
         </div>
-        <i
-          @click="mobileMenuShow = !mobileMenuShow"
-          class="iconfont icon-Menu"
-        ></i>
+        <i @click="mobileMenuShow = !mobileMenuShow" class="iconfont icon-Menu"></i>
       </el-header>
       <!-- <transition name="fade"> -->
-        <!-- 手机导航 -->
-        <el-aside
-          v-show="mobileMenuShow"
-          class="main-aside-mobile"
-          width="370px"
-        >
-          <el-row class="tac">
-            <el-col :span="24">
-              <el-menu
-                router
-                unique-opened
-                default-active="2"
-                class="el-menu-vertical-demo"
-              >
-                <el-submenu index="1">
-                  <template slot="title">
-                    <i class="fa fa-folder-o fa-lg"></i>
-                    <span>博客</span>
-                  </template>
-                  <el-menu-item index="mega"
-                    ><i class="fa fa-file-text-o"></i
-                    >MEGAsync-不限速网盘</el-menu-item
-                  >
-                  <el-menu-item index="ittool"
-                    ><i class="fa fa-file-text-o"></i
-                    >软件开发10款实用工具</el-menu-item
-                  >
-                </el-submenu>
-                <el-submenu index="2">
-                  <template slot="title">
-                    <i class="fa fa-folder-o fa-lg"></i>
-                    <span>生活分享</span>
-                  </template>
-                  <el-menu-item index="2-1"
-                    ><i class="fa fa-file-text-o"></i>母鸡</el-menu-item
-                  >
-                  <el-menu-item index="2-2"
-                    ><i class="fa fa-file-text-o"></i>再见</el-menu-item
-                  >
-                </el-submenu>
-                <el-submenu index="3">
-                  <template slot="title">
-                    <i class="fa fa-folder-o fa-lg"></i>
-                    <span>例题</span>
-                  </template>
-                  <el-menu-item index="imgshow"
-                    ><i class="fa fa-file-text-o"></i>https图片在安卓和ios不显示</el-menu-item
-                  >
-                  <el-menu-item index="3-2"
-                    ><i class="fa fa-file-text-o"></i>再见</el-menu-item
-                  >
-                </el-submenu>
-                <el-submenu index="4">
-                  <template slot="title">
-                    <i class="fa fa-folder-o fa-lg"></i>
-                    <span>VLOG</span>
-                  </template>
-                  <el-menu-item index="4-1"
-                    ><i class="fa fa-file-text-o"></i>母鸡</el-menu-item
-                  >
-                  <el-menu-item index="4-2"
-                    ><i class="fa fa-file-text-o"></i>再见</el-menu-item
-                  >
-                </el-submenu>
-              </el-menu>
-            </el-col>
-          </el-row>
-        </el-aside>
+      <!-- 手机导航 -->
+      <el-aside v-show="mobileMenuShow" class="main-aside-mobile" width="370px">
+        <el-row class="tac">
+          <el-col :span="24">
+            <el-menu router unique-opened default-active="2" class="el-menu-vertical-demo">
+              <el-submenu index="1">
+                <template slot="title">
+                  <i class="fa fa-folder-o fa-lg"></i>
+                  <span>博客</span>
+                </template>
+                <el-menu-item index="mega">
+                  <i class="fa fa-file-text-o"></i>MEGAsync-不限速网盘
+                </el-menu-item>
+                <el-menu-item index="ittool">
+                  <i class="fa fa-file-text-o"></i>软件开发10款实用工具
+                </el-menu-item>
+              </el-submenu>
+              <el-submenu index="2">
+                <template slot="title">
+                  <i class="fa fa-folder-o fa-lg"></i>
+                  <span>生活分享</span>
+                </template>
+                <el-menu-item index="2-1">
+                  <i class="fa fa-file-text-o"></i>母鸡
+                </el-menu-item>
+                <el-menu-item index="2-2">
+                  <i class="fa fa-file-text-o"></i>再见
+                </el-menu-item>
+              </el-submenu>
+              <el-submenu index="3">
+                <template slot="title">
+                  <i class="fa fa-folder-o fa-lg"></i>
+                  <span>例题</span>
+                </template>
+                <el-menu-item index="imgshow">
+                  <i class="fa fa-file-text-o"></i>https图片在安卓和ios不显示
+                </el-menu-item>
+                <el-menu-item index="3-2">
+                  <i class="fa fa-file-text-o"></i>再见
+                </el-menu-item>
+              </el-submenu>
+              <el-submenu index="4">
+                <template slot="title">
+                  <i class="fa fa-folder-o fa-lg"></i>
+                  <span>VLOG</span>
+                </template>
+                <el-menu-item index="4-1">
+                  <i class="fa fa-file-text-o"></i>母鸡
+                </el-menu-item>
+                <el-menu-item index="4-2">
+                  <i class="fa fa-file-text-o"></i>再见
+                </el-menu-item>
+              </el-submenu>
+            </el-menu>
+          </el-col>
+        </el-row>
+      </el-aside>
       <!-- </transition> -->
 
       <el-container class="index-main">
         <el-aside class="main-aside" width="300px">
           <el-row class="tac">
             <el-col :span="24">
-              <el-menu
-                router
-                unique-opened
-                default-active="2"
-                class="el-menu-vertical-demo"
-              >
+              <el-menu router default-active="2" class="el-menu-vertical-demo">
                 <el-submenu index="1">
                   <template slot="title">
                     <i class="fa fa-folder-o fa-lg"></i>
                     <span>博客</span>
                   </template>
-                  <el-menu-item index="mega"
-                    ><i class="fa fa-file-text-o"></i
-                    >MEGAsync-不限速网盘</el-menu-item
-                  >
-                  <el-menu-item index="ittool"
-                    ><i class="fa fa-file-text-o"></i
-                    >软件开发10款实用工具</el-menu-item
-                  >
+                  <el-menu-item index="mega">
+                    <i class="fa fa-file-text-o"></i>MEGAsync-不限速网盘
+                  </el-menu-item>
+                  <el-menu-item index="ittool">
+                    <i class="fa fa-file-text-o"></i>软件开发10款实用工具
+                  </el-menu-item>
                 </el-submenu>
                 <el-submenu index="2">
                   <template slot="title">
                     <i class="fa fa-folder-o fa-lg"></i>
                     <span>生活分享</span>
                   </template>
-                  <el-menu-item index="2-1"
-                    ><i class="fa fa-file-text-o"></i>母鸡</el-menu-item
-                  >
-                  <el-menu-item index="2-2"
-                    ><i class="fa fa-file-text-o"></i>再见</el-menu-item
-                  >
+                  <el-menu-item index="2-1">
+                    <i class="fa fa-file-text-o"></i>母鸡
+                  </el-menu-item>
+                  <el-menu-item index="2-2">
+                    <i class="fa fa-file-text-o"></i>再见
+                  </el-menu-item>
                 </el-submenu>
                 <el-submenu index="3">
                   <template slot="title">
                     <i class="fa fa-folder-o fa-lg"></i>
-                    <span>例题</span>
+                    <span>常见问题</span>
                   </template>
-                  <el-menu-item index="imgshow"
-                    ><i class="fa fa-file-text-o"></i>img标签https图片安卓ios不显示</el-menu-item
-                  >
-                  <el-menu-item index="3-2"
-                    ><i class="fa fa-file-text-o"></i>再见</el-menu-item
-                  >
+                  <el-menu-item index="imgshow">
+                    <i class="fa fa-file-text-o"></i>img标签https图片安卓ios不显示
+                  </el-menu-item>
+                  <el-menu-item index="varless">
+                    <i class="fa fa-file-text-o"></i>Vue-CLI3配置less全局变量
+                  </el-menu-item>
                 </el-submenu>
                 <el-submenu index="4">
                   <template slot="title">
                     <i class="fa fa-folder-o fa-lg"></i>
                     <span>VLOG</span>
                   </template>
-                  <el-menu-item index="4-1"
-                    ><i class="fa fa-file-text-o"></i>母鸡</el-menu-item
-                  >
-                  <el-menu-item index="4-2"
-                    ><i class="fa fa-file-text-o"></i>再见</el-menu-item
-                  >
+                  <el-menu-item index="4-1">
+                    <i class="fa fa-file-text-o"></i>母鸡
+                  </el-menu-item>
+                  <el-menu-item index="4-2">
+                    <i class="fa fa-file-text-o"></i>再见
+                  </el-menu-item>
                 </el-submenu>
               </el-menu>
             </el-col>
@@ -148,67 +127,62 @@
         <el-aside class="main-aside-small" width="200px">
           <el-row class="tac">
             <el-col :span="24">
-              <el-menu
-                router
-                unique-opened
-                default-active="2"
-                class="el-menu-vertical-demo"
-              >
+              <el-menu router unique-opened default-active="2" class="el-menu-vertical-demo">
                 <el-submenu index="1">
                   <template slot="title">
                     <i class="fa fa-folder-o fa-lg"></i>
                     <span>博客</span>
                   </template>
-                  <el-menu-item index="mega"
-                    ><i class="fa fa-file-text-o"></i
-                    >MEGAsync-不限速网盘</el-menu-item
-                  >
-                  <el-menu-item index="ittool"
-                    ><i class="fa fa-file-text-o"></i
-                    >软件开发10款实用工具</el-menu-item
-                  >
+                  <el-menu-item index="mega">
+                    <i class="fa fa-file-text-o"></i>MEGAsync-不限速网盘
+                  </el-menu-item>
+                  <el-menu-item index="ittool">
+                    <i class="fa fa-file-text-o"></i>软件开发10款实用工具
+                  </el-menu-item>
                 </el-submenu>
                 <el-submenu index="2">
                   <template slot="title">
                     <i class="fa fa-folder-o fa-lg"></i>
                     <span>生活分享</span>
                   </template>
-                  <el-menu-item index="2-1"
-                    ><i class="fa fa-file-text-o"></i>母鸡</el-menu-item
-                  >
-                  <el-menu-item index="2-2"
-                    ><i class="fa fa-file-text-o"></i>再见</el-menu-item
-                  >
+                  <el-menu-item index="2-1">
+                    <i class="fa fa-file-text-o"></i>母鸡
+                  </el-menu-item>
+                  <el-menu-item index="2-2">
+                    <i class="fa fa-file-text-o"></i>再见
+                  </el-menu-item>
                 </el-submenu>
                 <el-submenu index="3">
                   <template slot="title">
                     <i class="fa fa-folder-o fa-lg"></i>
                     <span>电影</span>
                   </template>
-                  <el-menu-item index="3-1"
-                    ><i class="fa fa-file-text-o"></i>母鸡</el-menu-item
-                  >
-                  <el-menu-item index="3-2"
-                    ><i class="fa fa-file-text-o"></i>再见</el-menu-item
-                  >
+                  <el-menu-item index="3-1">
+                    <i class="fa fa-file-text-o"></i>母鸡
+                  </el-menu-item>
+                  <el-menu-item index="3-2">
+                    <i class="fa fa-file-text-o"></i>再见
+                  </el-menu-item>
                 </el-submenu>
                 <el-submenu index="4">
                   <template slot="title">
                     <i class="fa fa-folder-o fa-lg"></i>
                     <span>VLOG</span>
                   </template>
-                  <el-menu-item index="4-1"
-                    ><i class="fa fa-file-text-o"></i>母鸡</el-menu-item
-                  >
-                  <el-menu-item index="4-2"
-                    ><i class="fa fa-file-text-o"></i>再见</el-menu-item
-                  >
+                  <el-menu-item index="4-1">
+                    <i class="fa fa-file-text-o"></i>母鸡
+                  </el-menu-item>
+                  <el-menu-item index="4-2">
+                    <i class="fa fa-file-text-o"></i>再见
+                  </el-menu-item>
                 </el-submenu>
               </el-menu>
             </el-col>
           </el-row>
         </el-aside>
-        <el-main class="main-center"><router-view></router-view></el-main>
+        <el-main class="main-center">
+          <router-view></router-view>
+        </el-main>
       </el-container>
     </el-container>
   </div>
@@ -221,24 +195,21 @@ export default {
   data() {
     return {
       screenWidth: document.body.clientWidth,
-      mobileMenuShow: false,
+      mobileMenuShow: false
     };
   },
-  
 
-   mounted () {
+  mounted() {
     // 监听窗口大小
     window.onresize = () => {
-      this.screenWidth = document.body.clientWidth
-      if(this.screenWidth>768){
-        this.mobileMenuShow=false
+      this.screenWidth = document.body.clientWidth;
+      if (this.screenWidth > 768) {
+        this.mobileMenuShow = false;
       }
-  
-    }
-  },
+    };
+  }
 };
 </script>
-
 
 <style lang="less">
 html,
@@ -247,14 +218,14 @@ body {
   padding: 0;
   height: 100%;
 
-//手机导航动画
-//   .fade-enter-active, .fade-leave-active {
-//   transition: all .5s;
-// }
-// .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-//   opacity: 0;
-//   transform: translateY(-100%);
-// }
+  //手机导航动画
+  //   .fade-enter-active, .fade-leave-active {
+  //   transition: all .5s;
+  // }
+  // .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  //   opacity: 0;
+  //   transform: translateY(-100%);
+  // }
 
   @media screen and (min-width: 992px) and (max-width: 1200px) {
     body {
@@ -314,7 +285,6 @@ body {
 
             .main-center {
               padding-right: 20px;
-              
             }
           }
         }
@@ -326,8 +296,11 @@ body {
   }
   #container {
     height: 100%;
+
+    min-height: 100%;
     // background-color: #fcfcfc;
-    background-color: #f9f9f9;
+    background-color: @bg;
+    // background-image:@bgimg;
     .index-container {
       height: 100%;
       .index-header {
@@ -336,8 +309,9 @@ body {
         width: 100%;
         height: 52px;
         padding: 0;
-        // background-color: #fcfcfc;
-        background-color: #f9f9f9;
+        background-color: @bg;
+        // opacity: .5;
+        // background-image: url("./assets/img/binding-dark.png");
         .tit {
           margin-right: 170px;
           text-align: right;
@@ -364,7 +338,7 @@ body {
           // transition: all 1s;
           // &:hover {
           //   transform: rotateZ(360deg);
-            
+
           // }
         }
       }
@@ -428,38 +402,29 @@ body {
       }
       .index-main {
         margin-top: 52px;
-        // padding: 0 10px;
-        background-color: #f9f9f9;
+        
+        background-color: @bg;
         .main-aside {
           position: relative;
-          // padding-right: 10px;
           padding: 0 10px 10px 10px;
           height: 100%;
           .tac {
             position: fixed;
             width: 280px;
             ul {
-              // background-color: #fcfcfc;
-              // background-color: #f9f9f9;
               border: none;
               .el-submenu {
                 // margin-bottom: 10px;
                 background-color: #fff;
                 .el-submenu__title {
-
-                  // padding-left: 60px !important;
-                  // color: #333;
-                  color: #707070;
+                  color: @tcolor;
                   font-size: 14px;
-                  // font-weight: bold;
                   &:hover {
                     // background-color: #afb3b9;
                     background-color: #fff;
                   }
                   .fa {
                     margin-right: 5px;
-                    // color: #333;
-                    // color: #707070;
                   }
                   .el-submenu__icon-arrow {
                     display: none;
@@ -467,24 +432,23 @@ body {
                 }
                 ul {
                   .el-menu-item {
-                    // padding-left: 100px !important;
-                    // color: #333;
-                    color: #707070;
+                    color: @tcolor;
                     font-size: 14px;
                     background-color: #fff;
                     &:hover {
-                      background-color: #fff;
-                      // color: #007ca9;
-                      color: #008bfa;
+                      background-color: @bg;
+                      // color: @acolor;
+                      // color: #333;
+                      // font-weight: bold;
                     }
                     &.is-active {
-                      background-color: #fff;
-                      // color: #007ca9;
-                      color: #008bfa;
+                      background-color: @bg;
+                      // color: @acolor;
+                      // color: #333;
+                      // font-weight: bold;
                     }
                     .fa {
                       margin-right: 5px;
-                      // color: #333;
                       padding-bottom: 3px;
                     }
                   }
@@ -549,7 +513,8 @@ body {
         }
 
         .main-center {
-          padding: 0 300px 0 20px;
+          // padding: 20px 300px 0 40px;
+          padding: 20px 100px 0 60px;
           width: 100%;
           height: 100%;
           background-color: #fff;

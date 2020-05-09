@@ -32,19 +32,20 @@ export default {
 .img-show {
 p {
 
-    color: #333;
-    font-size: 14px;
+    color: @tcolor;
     line-height: 24px;
     &.origin {
-        color: #999;
+        color: @tcolor;
+        font-size: 12px;
             text-align: right;
         a {
-            color: #007ca9;
+            color: @acolor;
         }
     }
 }
 .code {
     color: #a9b2bf;
+    line-height: 30px;
     background-color: #333;
 }
 
