@@ -1,0 +1,18 @@
+.code {
+  padding: 10px;
+  color: #c8c6c8;
+  line-height: 30px;
+  background-color: #211f20;
+}
+.code .code-var {
+  color: #d94359;
+}
+.code .code-key {
+  color: #008bfa;
+}
+.code .code-attribute {
+  color: #00a08a;
+}
+p {
+  color: #707070;
+}

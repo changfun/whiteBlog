@@ -43,11 +43,7 @@ p {
         }
     }
 }
-.code {
-    color: #a9b2bf;
-    line-height: 30px;
-    background-color: #333;
-}
+
 
 }
 </style>

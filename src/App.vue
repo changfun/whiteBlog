@@ -89,12 +89,20 @@
                     <i class="fa fa-folder-o fa-lg"></i>
                     <span>生活分享</span>
                   </template>
-                  <el-menu-item index="2-1">
-                    <i class="fa fa-file-text-o"></i>母鸡
-                  </el-menu-item>
-                  <el-menu-item index="2-2">
-                    <i class="fa fa-file-text-o"></i>再见
-                  </el-menu-item>
+                  <el-menu-item-group>
+                    <template slot="title">电影</template>
+                    <el-menu-item index="horrormovie">
+                      <i class="fa fa-file-text-o"></i>恐怖电影TOP10
+                    </el-menu-item>
+                    <el-menu-item index="2-2">
+                      <i class="fa fa-file-text-o"></i>再见
+                    </el-menu-item>
+                  </el-menu-item-group>
+                  <el-menu-item-group title="随笔">
+                    <el-menu-item index="2-1">
+                      <i class="fa fa-file-text-o"></i>母鸡
+                    </el-menu-item>
+                  </el-menu-item-group>
                 </el-submenu>
                 <el-submenu index="3">
                   <template slot="title">
@@ -107,11 +115,14 @@
                   <el-menu-item index="varless">
                     <i class="fa fa-file-text-o"></i>Vue-CLI3配置less全局变量
                   </el-menu-item>
+                  <el-menu-item index="bgshow">
+                    <i class="fa fa-file-text-o"></i>Vue项目动态添加的图片不显示
+                  </el-menu-item>
                 </el-submenu>
                 <el-submenu index="4">
                   <template slot="title">
                     <i class="fa fa-folder-o fa-lg"></i>
-                    <span>VLOG</span>
+                    <span>SKILLS</span>
                   </template>
                   <el-menu-item index="4-1">
                     <i class="fa fa-file-text-o"></i>母鸡
@@ -124,6 +135,7 @@
             </el-col>
           </el-row>
         </el-aside>
+        <!-- 手机端导航 -->
         <el-aside class="main-aside-small" width="200px">
           <el-row class="tac">
             <el-col :span="24">
@@ -402,7 +414,7 @@ body {
       }
       .index-main {
         margin-top: 52px;
-        
+
         background-color: @bg;
         .main-aside {
           position: relative;
@@ -524,3 +536,4 @@ body {
   }
 }
 </style>
+

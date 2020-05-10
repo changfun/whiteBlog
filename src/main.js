@@ -19,6 +19,8 @@ import itTool from "./components/itTool.vue";
 //例题
 import imgshow from "./components/example/imgshow.vue";
 import lessVariable from "./components/example/lessVariable.vue";
+import bgShow from "./components/example/bgShow.vue";
+import horrorMovie from "./components/live/horrorMovie.vue";
 
 const routes = [
   {
@@ -44,6 +46,14 @@ const routes = [
   {
     path: "/varless",
     component: lessVariable,
+  },
+  {
+    path: "/bgshow",
+    component: bgShow,
+  },
+  {
+    path: "/horrormovie",
+    component: horrorMovie,
   },
 ];
 
