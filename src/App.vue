@@ -7,71 +7,12 @@
         </div>
         <i @click="mobileMenuShow = !mobileMenuShow" class="iconfont icon-Menu"></i>
       </el-header>
-      <!-- <transition name="fade"> -->
-      <!-- 手机导航 -->
-      <el-aside v-show="mobileMenuShow" class="main-aside-mobile" width="370px">
-        <el-row class="tac">
-          <el-col :span="24">
-            <el-menu router unique-opened default-active="2" class="el-menu-vertical-demo">
-              <el-submenu index="1">
-                <template slot="title">
-                  <i class="fa fa-folder-o fa-lg"></i>
-                  <span>博客</span>
-                </template>
-                <el-menu-item index="mega">
-                  <i class="fa fa-file-text-o"></i>MEGAsync-不限速网盘
-                </el-menu-item>
-                <el-menu-item index="ittool">
-                  <i class="fa fa-file-text-o"></i>软件开发10款实用工具
-                </el-menu-item>
-              </el-submenu>
-              <el-submenu index="2">
-                <template slot="title">
-                  <i class="fa fa-folder-o fa-lg"></i>
-                  <span>生活分享</span>
-                </template>
-                <el-menu-item index="2-1">
-                  <i class="fa fa-file-text-o"></i>母鸡
-                </el-menu-item>
-                <el-menu-item index="2-2">
-                  <i class="fa fa-file-text-o"></i>再见
-                </el-menu-item>
-              </el-submenu>
-              <el-submenu index="3">
-                <template slot="title">
-                  <i class="fa fa-folder-o fa-lg"></i>
-                  <span>例题</span>
-                </template>
-                <el-menu-item index="imgshow">
-                  <i class="fa fa-file-text-o"></i>https图片在安卓和ios不显示
-                </el-menu-item>
-                <el-menu-item index="3-2">
-                  <i class="fa fa-file-text-o"></i>再见
-                </el-menu-item>
-              </el-submenu>
-              <el-submenu index="4">
-                <template slot="title">
-                  <i class="fa fa-folder-o fa-lg"></i>
-                  <span>VLOG</span>
-                </template>
-                <el-menu-item index="4-1">
-                  <i class="fa fa-file-text-o"></i>母鸡
-                </el-menu-item>
-                <el-menu-item index="4-2">
-                  <i class="fa fa-file-text-o"></i>再见
-                </el-menu-item>
-              </el-submenu>
-            </el-menu>
-          </el-col>
-        </el-row>
-      </el-aside>
-      <!-- </transition> -->
-
+   
       <el-container class="index-main">
-        <el-aside class="main-aside" width="300px">
+        <el-aside class="main-aside" v-show="mobileMenuShow">
           <el-row class="tac">
             <el-col :span="24">
-              <el-menu router default-active="2" class="el-menu-vertical-demo">
+              <el-menu router default-active="2" class="el-menu-vertical-demo" :unique-opened="isMenuOpened">
                 <el-submenu index="1">
                   <template slot="title">
                     <i class="fa fa-folder-o fa-lg"></i>
@@ -94,15 +35,16 @@
                     <el-menu-item index="horrormovie">
                       <i class="fa fa-file-text-o"></i>恐怖电影TOP10
                     </el-menu-item>
-                    <el-menu-item index="2-2">
-                      <i class="fa fa-file-text-o"></i>再见
-                    </el-menu-item>
+                    
                   </el-menu-item-group>
-                  <el-menu-item-group title="随笔">
-                    <el-menu-item index="2-1">
-                      <i class="fa fa-file-text-o"></i>母鸡
+
+                  <el-menu-item-group>
+                    <template slot="title">杂文</template>
+                    <el-menu-item index="websites">
+                      <i class="fa fa-file-text-o"></i>Some websites
                     </el-menu-item>
-                  </el-menu-item-group>
+                    </el-menu-item-group>
+                 
                 </el-submenu>
                 <el-submenu index="3">
                   <template slot="title">
@@ -127,71 +69,13 @@
                   <el-menu-item index="es6">
                     <i class="fa fa-file-text-o"></i>ES6知识点汇总
                   </el-menu-item>
-                  <el-menu-item index="websites">
-                    <i class="fa fa-file-text-o"></i>Some websites
-                  </el-menu-item>
+                  
                 </el-submenu>
               </el-menu>
             </el-col>
           </el-row>
         </el-aside>
-        <!-- 手机端导航 -->
-        <el-aside class="main-aside-small" width="200px">
-          <el-row class="tac">
-            <el-col :span="24">
-              <el-menu router unique-opened default-active="2" class="el-menu-vertical-demo">
-                <el-submenu index="1">
-                  <template slot="title">
-                    <i class="fa fa-folder-o fa-lg"></i>
-                    <span>博客</span>
-                  </template>
-                  <el-menu-item index="mega">
-                    <i class="fa fa-file-text-o"></i>MEGAsync-不限速网盘
-                  </el-menu-item>
-                  <el-menu-item index="ittool">
-                    <i class="fa fa-file-text-o"></i>软件开发10款实用工具
-                  </el-menu-item>
-                </el-submenu>
-                <el-submenu index="2">
-                  <template slot="title">
-                    <i class="fa fa-folder-o fa-lg"></i>
-                    <span>生活分享</span>
-                  </template>
-                  <el-menu-item index="2-1">
-                    <i class="fa fa-file-text-o"></i>母鸡
-                  </el-menu-item>
-                  <el-menu-item index="2-2">
-                    <i class="fa fa-file-text-o"></i>再见
-                  </el-menu-item>
-                </el-submenu>
-                <el-submenu index="3">
-                  <template slot="title">
-                    <i class="fa fa-folder-o fa-lg"></i>
-                    <span>电影</span>
-                  </template>
-                  <el-menu-item index="3-1">
-                    <i class="fa fa-file-text-o"></i>母鸡
-                  </el-menu-item>
-                  <el-menu-item index="3-2">
-                    <i class="fa fa-file-text-o"></i>再见
-                  </el-menu-item>
-                </el-submenu>
-                <el-submenu index="4">
-                  <template slot="title">
-                    <i class="fa fa-folder-o fa-lg"></i>
-                    <span>VLOG</span>
-                  </template>
-                  <el-menu-item index="4-1">
-                    <i class="fa fa-file-text-o"></i>母鸡
-                  </el-menu-item>
-                  <el-menu-item index="4-2">
-                    <i class="fa fa-file-text-o"></i>再见
-                  </el-menu-item>
-                </el-submenu>
-              </el-menu>
-            </el-col>
-          </el-row>
-        </el-aside>
+      
         <el-main class="main-center">
           <router-view></router-view>
         </el-main>
@@ -206,20 +90,33 @@ export default {
   components: {},
   data() {
     return {
-      screenWidth: document.body.clientWidth,
-      mobileMenuShow: false
+      //列表是否只保持一个子菜单的展开
+      isMenuOpened:false,
+      //当前窗口大小
+      screenWidth:document.body.clientWidth,
+      mobileMenuShow: true
     };
   },
-
   mounted() {
-    // 监听窗口大小
-    window.onresize = () => {
-      this.screenWidth = document.body.clientWidth;
-      if (this.screenWidth > 768) {
-        this.mobileMenuShow = false;
-      }
-    };
-  }
+
+  //监听窗口大小变化
+
+  window.onresize = () => {
+
+   this.screenWidth = document.body.clientWidth;
+
+   if (this.screenWidth > 992) {
+     this.isMenuOpened=false
+     this.mobileMenuShow = true;
+   }else if (this.screenWidth < 992)  {
+     this.isMenuOpened=true
+   }
+
+  };
+
+ }
+
+
 };
 </script>
 
@@ -230,28 +127,16 @@ body {
   padding: 0;
   height: 100%;
 
-  //手机导航动画
-  //   .fade-enter-active, .fade-leave-active {
-  //   transition: all .5s;
-  // }
-  // .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  //   opacity: 0;
-  //   transform: translateY(-100%);
-  // }
+ 
 
   @media screen and (min-width: 992px) and (max-width: 1200px) {
     body {
       #container {
         .index-container {
           .index-main {
-            .main-aside {
-              display: none;
-            }
-            .main-aside-small {
-              display: block;
-            }
+            
             .main-center {
-              padding-right: 100px;
+              padding: 20px 40px 0;
             }
           }
         }
@@ -262,15 +147,30 @@ body {
     body {
       #container {
         .index-container {
-          .index-main {
-            .main-aside {
-              display: none;
+          .index-header {
+            div.tit {
+              margin-right: 0;
+              text-align: center;
             }
-            .main-aside-small {
+            i.iconfont {
               display: block;
             }
+          }
+          .index-main {
+            
+            .main-aside {
+              position: absolute;
+              z-index: 999;
+              top: 52px;
+              left: 0;
+              width: 100% !important;
+              .tac {
+                width: 100%;
+              }
+            }
+           
             .main-center {
-              padding-right: 20px;
+              padding: 20px 40px 0;
             }
           }
         }
@@ -291,28 +191,31 @@ body {
             }
           }
           .index-main {
-            .main-aside {
-              display: none;
+           .main-aside {
+              position: absolute;
+              z-index: 999;
+              top: 52px;
+              left: 0;
+              width: 100% !important;
+              .tac {
+                width: 100%;
+              }
             }
 
             .main-center {
-              padding-right: 20px;
+              padding:20px 20px 0;
+              
             }
           }
         }
-        .el-aside.main-aside-mobile {
-          display: block;
-        }
+        
       }
     }
   }
   #container {
     height: 100%;
-
     min-height: 100%;
-    // background-color: #fcfcfc;
     background-color: @bg;
-    // background-image:@bgimg;
     .index-container {
       height: 100%;
       .index-header {
@@ -322,8 +225,6 @@ body {
         height: 52px;
         padding: 0;
         background-color: @bg;
-        // opacity: .5;
-        // background-image: url("./assets/img/binding-dark.png");
         .tit {
           margin-right: 170px;
           text-align: right;
@@ -343,86 +244,22 @@ body {
           position: absolute;
           cursor: pointer;
           right: 50px;
-          top: 18px;
-          // color: #7a7a7a;
-          // color: $textColor;
+          top: 0;
+          padding: 16px;
           font-size: 18px;
-          // transition: all 1s;
-          // &:hover {
-          //   transform: rotateZ(360deg);
-
-          // }
+        
         }
       }
-      //手机导航
-      .main-aside-mobile {
-        position: relative;
-        top: 52px;
-        left: 0;
-        width: 100% !important;
-        .tac {
-          position: relative;
-          width: 100%;
-          height: 228px;
-          padding: 0 20px;
-
-          ul {
-            background-color: #fcfcfc;
-            border: none;
-            .el-submenu {
-              border-bottom: 1px solid #ccc;
-              box-sizing: border-box;
-              background-color: #fff;
-              .el-submenu__title {
-                color: #333;
-                font-size: 14px;
-                font-weight: bold;
-                &:hover {
-                  background-color: #afb3b9;
-                }
-                .fa {
-                  margin-right: 5px;
-                  color: #333;
-                }
-                .el-submenu__icon-arrow {
-                  display: none;
-                }
-              }
-              ul {
-                .el-menu-item {
-                  color: #333;
-                  font-size: 14px;
-                  background-color: #fff;
-                  &:hover {
-                    background-color: #fff;
-                    color: #007ca9;
-                  }
-                  &.is-active {
-                    background-color: #fff;
-                    color: #007ca9;
-                  }
-                  .fa {
-                    margin-right: 5px;
-                    color: #333;
-                    padding-bottom: 3px;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
+     
       .index-main {
         margin-top: 52px;
-
         background-color: @bg;
         .main-aside {
-          position: relative;
           padding: 0 10px 10px 10px;
+          width: 300px;
           height: 100%;
           .tac {
-            position: fixed;
-            width: 280px;
+            width: 100%;
             ul {
               border: none;
               .el-submenu {
@@ -469,64 +306,10 @@ body {
             }
           }
         }
-        .main-aside-small {
-          display: none;
-          position: relative;
-          width: 250px !important;
-          padding: 0 10px 10px 10px;
-          height: 100%;
-          .tac {
-            position: fixed;
-            width: 230px;
-            ul {
-              background-color: #fcfcfc;
-              border: none;
-              .el-submenu {
-                margin-bottom: 10px;
-                background-color: #fff;
-                .el-submenu__title {
-                  color: #333;
-                  font-size: 14px;
-                  font-weight: bold;
-                  &:hover {
-                    background-color: #afb3b9;
-                  }
-                  .fa {
-                    margin-right: 5px;
-                    color: #333;
-                  }
-                  .el-submenu__icon-arrow {
-                    display: none;
-                  }
-                }
-                ul {
-                  .el-menu-item {
-                    color: #333;
-                    font-size: 14px;
-                    background-color: #fff;
-                    &:hover {
-                      background-color: #fff;
-                      color: #007ca9;
-                    }
-                    &.is-active {
-                      background-color: #fff;
-                      color: #007ca9;
-                    }
-                    .fa {
-                      margin-right: 5px;
-                      color: #333;
-                      padding-bottom: 3px;
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
+        
 
         .main-center {
-          // padding: 20px 300px 0 40px;
-          padding: 20px 100px 0 60px;
+          padding: 20px 60px 0;
           width: 100%;
           height: 100%;
           background-color: #fff;

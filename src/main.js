@@ -25,12 +25,15 @@ Vue.use(VueRouter);
 import mega from "./components/mega.vue";
 import index from "./components/index.vue";
 import itTool from "./components/itTool.vue";
+
 import imgshow from "./components/example/imgshow.vue";
 import lessVariable from "./components/example/lessVariable.vue";
 import bgShow from "./components/example/bgShow.vue";
+
 import horrorMovie from "./components/live/horrorMovie.vue";
+import websites from "./components/live/websites.vue";
+
 import es6 from "./components/skills/es6.vue";
-import websites from "./components/skills/websites.vue";
 
 
 

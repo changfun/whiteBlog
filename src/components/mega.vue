@@ -5,10 +5,10 @@
     </div>
     <div class="mega-gw mega-item">
       <p>
-        下载:&nbsp;&nbsp;&nbsp;&nbsp;访问MEGAsync官网<a href="https://mega.nz"
+        下载:&nbsp;&nbsp;&nbsp;&nbsp;访问MEGAsync官网<a href="https://mega.nz" target="_blank"
           >https://mega.nz</a
         >下载(该网站国内无法访问 需搭梯).或者百度云盘<a
-          href="https://pan.baidu.com/s/1Wk9rAAqxMf7dqUTpUJv5TA"
+          href="https://pan.baidu.com/s/1Wk9rAAqxMf7dqUTpUJv5TA" target="_blank"
           >https://pan.baidu.com/s/1Wk9rAAqxMf7dqUTpUJv5TA(20190924官网下载)</a
         >提取码:lzqm
       </p>
@@ -30,9 +30,7 @@ export default {};
         p {
             color: @tcolor;
             font-size: 16px;
-            a {
-                color: @acolor;
-            }
+            
         }
         img {
           width: 99%;

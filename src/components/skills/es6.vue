@@ -1,7 +1,7 @@
 <template>
   <div class="es">
     <h2>ES6知识点汇总（全）</h2>
-    <p>ES6官方中文教程：<a href="http://es6.ruanyifeng.com/">http://es6.ruanyifeng.com/</a></p>
+    <p>ES6官方中文教程：<a href="http://es6.ruanyifeng.com/" target="_blank">http://es6.ruanyifeng.com/</a></p>
     <h3>一、问：ES6是什么?</h3>
     <p>答： ES6是新一代的JS语言标准，对部分JS语言核心内容做了升级优化，规范了JS使用标准，新增了JS原生方法，使得JS使用更加规范，更加优雅，更适合大型应用的开发。</p>
     <h3>二、问：ES5、ES6和ES2015有什么区别?</h3>

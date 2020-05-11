@@ -22,6 +22,7 @@ p {
 }
 a {
   color: #008bfa;
+  word-wrap: break-word;
 }
 .keyword {
   color: #f2546c;

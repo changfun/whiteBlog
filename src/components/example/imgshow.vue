@@ -19,7 +19,7 @@
     <br />
     <p class="origin">
 来源：本文为CSDN博主「芒果君君君呀_」
-原文链接：<a href="https://blog.csdn.net/Mangojjx/java/article/details/90479006">https://blog.csdn.net/Mangojjx/java/article/details/90479006</a></p>
+原文链接：<a href="https://blog.csdn.net/Mangojjx/java/article/details/90479006" target="_blank">https://blog.csdn.net/Mangojjx/java/article/details/90479006</a></p>
 </div>
 </template>
 

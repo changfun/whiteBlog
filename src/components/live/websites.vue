@@ -2,7 +2,7 @@
 <div class='websites'>
     <div class="site-item" v-for="(item, index) in sitesData" :key="index">
             <div class="site-icon">
-                <a :href="item.http">
+                <a :href="item.http" target="_blank">
                     <img :src="item.icon" alt="">
                 </a>
             </div>
@@ -11,8 +11,9 @@
                 <div class="dec"><span class="label" v-for="(it, index) in item.label" :key="index">{{it}}</span></div>
             </div>
     </div>
-    
-<!-- <span class="label">ICON</span><span class="label">博客</span> -->
+    <div class="site-item" ></div>
+    <div class="site-item" ></div>
+    <div class="site-item" ></div>
 </div>
 </template>
 
@@ -40,6 +41,7 @@ export default {
 .websites {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     .site-item {
         margin: 10px;
         width: 236px;
