@@ -12,6 +12,8 @@
         <p>{{item.dec}}</p>
       </div>
     </router-link>
+    <a class="a-box"></a>
+    <a class="a-box"></a>
     <!-- <router-link to class="a-box">
       <div>web开发</div>
     </router-link>
@@ -134,10 +136,10 @@ export default {
   // position: relative;
   display: flex;
   // padding-left: 20px;
-  height: 100%;
-  flex-direction: row;
+  // height: 100%;
+  // flex-direction: row;
   flex-wrap: wrap;
-  // justify-content: space-between;
+  justify-content: center;
   // background-color: #0f0;
   .a-box {
     display: flex;
