@@ -88,9 +88,9 @@ export default {
           path: require("../assets/img/banner5.jpg")
         },
         {
-          dec: "首页",
-          linkto: "index",
-          path: require("../assets/img/mao1.jpg")
+          dec: "ES6知识点汇总",
+          linkto: "es6",
+          path: require("../assets/img/es6.jpg")
         },
         {
           dec: "首页",
@@ -156,14 +156,14 @@ export default {
       width: 100%;
       color: #fff;
       font-size: 24px;
-      background-color: rgba(0, 0, 0, 0.3);
+      background-color: rgba(0, 0, 0, 0.4);
       .zhanwei {
         flex: 1;
         background: none;
       }
       p {
         color: #fff;
-        margin:4px 2px;
+        margin:8px 2px;
       }
     }
   }

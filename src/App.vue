@@ -1,5 +1,5 @@
 <template>
-  <div id="container">
+  <div id="container" v-title data-title="张凡个人网站">
     <el-container class="index-container">
       <el-header class="index-header" style="height:52px">
         <div class="tit">
@@ -124,11 +124,11 @@
                     <i class="fa fa-folder-o fa-lg"></i>
                     <span>SKILLS</span>
                   </template>
-                  <el-menu-item index="4-1">
-                    <i class="fa fa-file-text-o"></i>母鸡
+                  <el-menu-item index="es6">
+                    <i class="fa fa-file-text-o"></i>ES6知识点汇总
                   </el-menu-item>
-                  <el-menu-item index="4-2">
-                    <i class="fa fa-file-text-o"></i>再见
+                  <el-menu-item index="websites">
+                    <i class="fa fa-file-text-o"></i>Some websites
                   </el-menu-item>
                 </el-submenu>
               </el-menu>

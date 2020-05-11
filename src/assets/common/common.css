@@ -13,6 +13,16 @@
 .code .code-attribute {
   color: #00a08a;
 }
+.code .code-notes {
+  color: #797779;
+  font-size: 14px;
+}
 p {
   color: #707070;
+}
+a {
+  color: #008bfa;
+}
+.keyword {
+  color: #f2546c;
 }

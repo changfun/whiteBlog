@@ -10,17 +10,29 @@ import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 Vue.use(ElementUI);
 
+
+//设置网站标题
+Vue.directive('title', {
+  inserted: function (el) {
+    document.title = el.dataset.title
+  }
+})
+
+
 import VueRouter from "vue-router";
 Vue.use(VueRouter);
 
 import mega from "./components/mega.vue";
 import index from "./components/index.vue";
 import itTool from "./components/itTool.vue";
-//例题
 import imgshow from "./components/example/imgshow.vue";
 import lessVariable from "./components/example/lessVariable.vue";
 import bgShow from "./components/example/bgShow.vue";
 import horrorMovie from "./components/live/horrorMovie.vue";
+import es6 from "./components/skills/es6.vue";
+import websites from "./components/skills/websites.vue";
+
+
 
 const routes = [
   {
@@ -54,6 +66,14 @@ const routes = [
   {
     path: "/horrormovie",
     component: horrorMovie,
+  },
+  {
+    path: "/es6",
+    component: es6,
+  },
+  {
+    path: "/websites",
+    component: websites,
   },
 ];
 
