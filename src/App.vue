@@ -255,11 +255,13 @@ body {
         margin-top: 52px;
         background-color: @bg;
         .main-aside {
+          position: relative;
           padding: 0 10px 10px 10px;
           width: 300px;
           height: 100%;
           .tac {
-            width: 100%;
+            position: fixed;
+            width: 280px;
             ul {
               border: none;
               .el-submenu {
