@@ -14,40 +14,6 @@
     </router-link>
     <a class="a-box"></a>
     <a class="a-box"></a>
-    <!-- <router-link to class="a-box">
-      <div>web开发</div>
-    </router-link>
-    <router-link to class="a-box">
-      <div>web开发</div>
-    </router-link>
-    <router-link to class="a-box">
-      <div>web开发</div>
-    </router-link>-->
-
-    <!-- <div class="center"> -->
-    <!-- <div class="text" :style="'width:'+num+'px'">
-        {{ msg}}
-    </div>-->
-    <!-- <p>
-        <router-link to="">开发</router-link>
-        <router-link to="">开发</router-link>
-        <router-link to="">开发</router-link>
-        <router-link to="">开发</router-link>
-        </p>
-        <p>
-        <router-link to="">开发</router-link>
-        <router-link to="">开发</router-link>
-        <router-link to="">开发</router-link>
-        <router-link to="">开发</router-link>
-        <router-link to="">开发</router-link>
-        </p>
-        <p>
-        <router-link to="">开发</router-link>
-        <router-link to="">开发</router-link>
-        <router-link to="">开发</router-link>
-        <router-link to="">开发</router-link>
-    </p>-->
-    <!-- </div> -->
   </div>
 </template>
 
@@ -55,9 +21,6 @@
 export default {
   data() {
     return {
-      msg: "夏天的风 我永远记得",
-      num: 0,
-      timenum: 0,
       imgData: [
         {
           dec: "MEGAsync-不限速网盘",
@@ -111,47 +74,21 @@ export default {
         }
       ]
     };
-  },
-
-  created() {
-    // setInterval(() => {
-    //   if (this.num == 0) {
-    //       if(this.timenum%2==1){
-    //           this.msg="为什么你不在 问山风你会回来"
-    //       }else{
-    //           this.msg="夏天的风 我永远记得"
-    //       }
-    //     this.num = 260;
-    //   } else if (this.num >= 260) {
-    //     this.num = 0;
-    //     this.timenum++
-    //   }
-    // }, 3000);
   }
 };
 </script>
 
 <style lang="less">
 .index {
-  // position: relative;
   display: flex;
-  // padding-left: 20px;
-  // height: 100%;
-  // flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  // background-color: #0f0;
   .a-box {
     display: flex;
     margin: 10px;
     width: 340px;
     height: 214px;
     text-decoration: none;
-    // background-color: #ff5147;
-    // background-image: url('../assets/img/binding-dark.png');
-    // background-image: url("../assets/img/fan1.jpg");
-    // background-position: center;
-
     div {
       display: flex;
       flex-direction: column;
@@ -165,49 +102,9 @@ export default {
       }
       p {
         color: #fff;
-        margin:8px 2px;
+        margin: 8px 2px;
       }
     }
   }
-  // .center {
-  //   position: absolute;
-  //   top: 40%;
-  //   left: 50%;
-  //   transform: translateX(-50%) translateY(-50%);
-  //   width: 900px;
-  //   height: 500px;
-  //   box-sizing: border-box;
-
-  //   // background-color: #f00;
-
-  //   // p {
-  //   //   text-align: center;
-  //   //   a {
-  //   //     margin: 0 15px;
-  //   //     display: inline-block;
-  //   //     padding: 0 20px;
-  //   //     text-align: center;
-  //   //     line-height: 40px;
-  //   //     text-decoration: none;
-  //   //     color: #fff;
-  //   //     font-size: 14px;
-  //   //     background-color: #ff5147;
-  //   //     border-radius: 9px;
-  //   //     &:nth-child(3n+2) {
-  //   //       // background-color: #00cc4e;
-  //   //     }
-  //   //     &:nth-child(3n+3) {
-  //   //       // background-color: #ffba23;
-  //   //     }
-  //   //   }
-  //   // }
-
-  //   // .text {
-  //   //   color: @tcolor;
-  //   //   white-space: nowrap;
-  //   //   overflow: hidden;
-  //   //   transition: all 3s ease 0s;
-  //   // }
-  // }
 }
 </style>

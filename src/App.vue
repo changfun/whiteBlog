@@ -7,12 +7,17 @@
         </div>
         <i @click="mobileMenuShow = !mobileMenuShow" class="iconfont icon-Menu"></i>
       </el-header>
-   
+
       <el-container class="index-main">
         <el-aside class="main-aside" v-show="mobileMenuShow">
           <el-row class="tac">
             <el-col :span="24">
-              <el-menu router default-active="2" class="el-menu-vertical-demo" :unique-opened="isMenuOpened">
+              <el-menu
+                router
+                default-active="2"
+                class="el-menu-vertical-demo"
+                :unique-opened="isMenuOpened"
+              >
                 <el-submenu index="1">
                   <template slot="title">
                     <i class="fa fa-folder-o fa-lg"></i>
@@ -35,7 +40,6 @@
                     <el-menu-item index="horrormovie">
                       <i class="fa fa-file-text-o"></i>恐怖电影TOP10
                     </el-menu-item>
-                    
                   </el-menu-item-group>
 
                   <el-menu-item-group>
@@ -43,8 +47,7 @@
                     <el-menu-item index="websites">
                       <i class="fa fa-file-text-o"></i>Some websites
                     </el-menu-item>
-                    </el-menu-item-group>
-                 
+                  </el-menu-item-group>
                 </el-submenu>
                 <el-submenu index="3">
                   <template slot="title">
@@ -69,13 +72,12 @@
                   <el-menu-item index="es6">
                     <i class="fa fa-file-text-o"></i>ES6知识点汇总
                   </el-menu-item>
-                  
                 </el-submenu>
               </el-menu>
             </el-col>
           </el-row>
         </el-aside>
-      
+
         <el-main class="main-center">
           <router-view></router-view>
         </el-main>
@@ -91,32 +93,28 @@ export default {
   data() {
     return {
       //列表是否只保持一个子菜单的展开
-      isMenuOpened:false,
+      isMenuOpened: false,
       //当前窗口大小
-      screenWidth:document.body.clientWidth,
+      screenWidth: document.body.clientWidth,
       mobileMenuShow: true
     };
   },
   mounted() {
+    //监听窗口大小变化
 
-  //监听窗口大小变化
+    window.onresize = () => {
+      this.screenWidth = document.body.clientWidth;
 
-  window.onresize = () => {
-
-   this.screenWidth = document.body.clientWidth;
-
-   if (this.screenWidth > 992) {
-     this.isMenuOpened=false
-     this.mobileMenuShow = true;
-   }else if (this.screenWidth < 992)  {
-     this.isMenuOpened=true
-   }
-
-  };
-
- }
-
-
+      if (this.screenWidth >= 992) {
+        this.isMenuOpened = false;
+        this.mobileMenuShow = true;
+      } else if (this.screenWidth < 992) {
+        this.isMenuOpened = true;
+        //低于992时导航默认隐藏,但此处992与媒体查询的992存在区别,此处宽度不包含导航条,所以992附件可能出现导航消失但菜单按钮未出现
+        this.mobileMenuShow = false;
+      }
+    };
+  }
 };
 </script>
 
@@ -127,14 +125,65 @@ body {
   padding: 0;
   height: 100%;
 
- 
-
   @media screen and (min-width: 992px) and (max-width: 1200px) {
     body {
       #container {
         .index-container {
           .index-main {
-            
+            .main-aside {
+              position: relative;
+              padding: 0 10px 10px 10px;
+              width: 300px;
+              min-height: 224px;
+              .tac {
+                position: fixed;
+                width: 280px;
+                ul {
+                  border: none;
+                  .el-submenu {
+                    // margin-bottom: 10px;
+                    background-color: #fff;
+                    .el-submenu__title {
+                      color: @tcolor;
+                      font-size: 14px;
+                      &:hover {
+                        // background-color: #afb3b9;
+                        background-color: #fff;
+                      }
+                      .fa {
+                        margin-right: 5px;
+                      }
+                      .el-submenu__icon-arrow {
+                        display: none;
+                      }
+                    }
+                    ul {
+                      .el-menu-item {
+                        color: @tcolor;
+                        font-size: 14px;
+                        background-color: #fff;
+                        &:hover {
+                          background-color: @bg;
+                          // color: @acolor;
+                          // color: #333;
+                          // font-weight: bold;
+                        }
+                        &.is-active {
+                          background-color: @bg;
+                          // color: @acolor;
+                          // color: #333;
+                          // font-weight: bold;
+                        }
+                        .fa {
+                          margin-right: 5px;
+                          padding-bottom: 3px;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
             .main-center {
               padding: 20px 40px 0;
             }
@@ -157,18 +206,23 @@ body {
             }
           }
           .index-main {
-            
             .main-aside {
-              position: absolute;
-              z-index: 999;
+              position: fixed;
+              //防止导航低于电影海报层级
+              z-index: 997;
+              padding: 0;
               top: 52px;
               left: 0;
               width: 100% !important;
               .tac {
+                position: fixed;
+                z-index: 998;
+                left: 0;
                 width: 100%;
+                box-shadow: 0px 1px 8px 2px #999;
               }
             }
-           
+
             .main-center {
               padding: 20px 40px 0;
             }
@@ -191,24 +245,28 @@ body {
             }
           }
           .index-main {
-           .main-aside {
-              position: absolute;
-              z-index: 999;
+            .main-aside {
+              position: fixed;
+              //防止导航低于电影海报层级
+              z-index: 997;
+              padding: 0;
               top: 52px;
               left: 0;
               width: 100% !important;
               .tac {
+                position: fixed;
+                z-index: 998;
+                left: 0;
                 width: 100%;
+                box-shadow: 0px 1px 8px 2px #999;
               }
             }
 
             .main-center {
-              padding:20px 20px 0;
-              
+              padding: 20px 20px 0;
             }
           }
         }
-        
       }
     }
   }
@@ -219,7 +277,7 @@ body {
     .index-container {
       height: 100%;
       .index-header {
-        z-index: 2;
+        z-index: 999;
         position: fixed;
         width: 100%;
         height: 52px;
@@ -247,10 +305,9 @@ body {
           top: 0;
           padding: 16px;
           font-size: 18px;
-        
         }
       }
-     
+
       .index-main {
         margin-top: 52px;
         background-color: @bg;
@@ -258,7 +315,7 @@ body {
           position: relative;
           padding: 0 10px 10px 10px;
           width: 300px;
-          height: 100%;
+          min-height: 224px;
           .tac {
             position: fixed;
             width: 280px;
@@ -308,7 +365,6 @@ body {
             }
           }
         }
-        
 
         .main-center {
           padding: 20px 60px 0;

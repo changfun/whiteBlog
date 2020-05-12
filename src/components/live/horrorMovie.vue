@@ -1,6 +1,6 @@
 <template>
   <div class="horror-movie">
-    <el-carousel class="container" :interval="2000" type="card" height="800px" trigger="click">
+    <el-carousel class="container" :interval="2000"  type="card" trigger="click">
       <el-carousel-item
         v-for="(item,index) in movieData"
         :key="index"
@@ -8,7 +8,7 @@
       >
         <div class="poster">
           <div class="img-box">
-              <!-- <div class="pagenum">{{index+1}}</div> -->
+            <!-- <div class="pagenum">{{index+1}}</div> -->
             <img :src="item.imgSrc" alt />
           </div>
         </div>
@@ -164,71 +164,71 @@ export default {
 </script>
 
 <style lang="less">
-.container {
-    
-.el-carousel__item {
-  display: flex;
-  
+.horror-movie {
+  .container {
+    height:830px;
+    .el-carousel__container {
+      height:800px;
+    .el-carousel__item {
+      display: flex;
+      
 
-  .poster {
-    width: 540px;
-    .img-box {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      img {
-          width: 540px;
-        height: 100%;
+      .poster {
+        width: 540px;
+        .img-box {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+          //   .pagenum{
+          //       position: absolute;
+          //       top: 20px;
+          //       left: 50px;
+          //       width: 50px;
+          //       height: 50px;
+          //       text-align: center;
+          //       line-height: 50px;
+          //       color: #fff;
+          //       font-size: 24px;
+          //       border-radius: 25px;
+          //       background-color: #e30000;
+          //   }
+        }
       }
-    //   .pagenum{
-    //       position: absolute;
-    //       top: 20px;
-    //       left: 50px;
-    //       width: 50px;
-    //       height: 50px;
-    //       text-align: center;
-    //       line-height: 50px;
-    //       color: #fff;
-    //       font-size: 24px;
-    //       border-radius: 25px;
-    //       background-color: #e30000;
-    //   }
+      .dec {
+        flex: 1;
+        padding: 4px;
+        background-color: rgba(0, 0, 0, 0.6);
+
+        .movie-name {
+          margin-top: 40px;
+          height: 180px;
+
+          h1 {
+            color: #999;
+            font-size: 30px;
+            margin: 16px 10px;
+          }
+          p {
+            padding-left: 2px;
+            color: #999;
+            font-size: 14px;
+          }
+        }
+        table {
+          width: 100%;
+          color: #888;
+          text-align: center;
+          border-color: #333;
+          background: url("../../assets/img/binding-dark.png");
+          background-color: rgba(0, 0, 0, 0.6);
+        }
+      }
     }
   }
-  .dec {
-    flex: 1;
-    padding: 4px;
-    background-color: rgba(0, 0, 0, 0.6);
-    // box-sizing: border-box;
-
-    .movie-name {
-      margin-top: 40px;
-      height: 180px;
-
-      h1 {
-        color: #999;
-        font-size: 30px;
-        margin: 16px 10px;
-      }
-      p {
-        padding-left: 2px;
-        color: #999;
-        font-size: 14px;
-      }
-    }
-    table {
-      width: 100%;
-      color: #888;
-      text-align: center;
-      border-color: #333;
-      background: url("../../assets/img/binding-dark.png");
-      background-color: rgba(0, 0, 0, 0.6);
-    }
   }
 }
-}
-
-
-
-
 </style>

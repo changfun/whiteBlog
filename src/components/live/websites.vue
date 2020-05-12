@@ -14,6 +14,7 @@
     <div class="site-item" ></div>
     <div class="site-item" ></div>
     <div class="site-item" ></div>
+    <div class="site-item" ></div>
 </div>
 </template>
 
@@ -28,9 +29,9 @@ export default {
                 {name:"theminimalists",icon:require("../../assets/img/man.jpg"),label:['设计','极简','博客'],http:"https://www.theminimalists.com/"},
                 {name:"logodesignlove",icon:require("../../assets/img/love.png"),label:['设计','极简','博客'],http:"https://www.logodesignlove.com/"},
                 {name:"pixabay",icon:require("../../assets/img/pixabay.png"),label:['设计','极简','壁纸'],http:"https://pixabay.com/"},
-                {name:"APPINN",icon:require("../../assets/img/appinn.png"),label:['资源','APP','开发'],http:"https://www.appinn.com/"},
-                {name:"CODELF",icon:require("../../assets/img/codelf.png"),label:['开发'],http:"https://unbug.github.io/codelf/"},
-                {name:"EMOJI",icon:require("../../assets/img/emoji.png"),label:['开发','资源'],http:"https://emojipedia.org/"},
+                // {name:"APPINN",icon:require("../../assets/img/appinn.png"),label:['资源','APP','开发'],http:"https://www.appinn.com/"},
+                // {name:"CODELF",icon:require("../../assets/img/codelf.png"),label:['开发'],http:"https://unbug.github.io/codelf/"},
+                // {name:"EMOJI",icon:require("../../assets/img/emoji.png"),label:['开发','资源'],http:"https://emojipedia.org/"},
             ]
         }
     },
