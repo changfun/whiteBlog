@@ -1,11 +1,19 @@
 <template>
-  <div id="container" v-title data-title="张凡个人网站">
+  <div id="container" :class="{night:isNight}" v-title data-title="张凡个人网站">
     <el-container class="index-container">
       <el-header class="index-header" style="height:52px">
         <div class="tit">
           <a href="http://zhangfine.top">张凡个人网站</a>
         </div>
         <i @click="mobileMenuShow = !mobileMenuShow" class="iconfont icon-Menu"></i>
+
+        <el-switch
+          class="theme"
+          @change="changeTheme"
+          v-model="isNight"
+          active-color="#00a08a"
+          inactive-color="#666"
+        ></el-switch>
       </el-header>
 
       <el-container class="index-main">
@@ -79,7 +87,10 @@
         </el-aside>
 
         <el-main class="main-center">
+          <el-scrollbar style="height:100%">
+
           <router-view></router-view>
+          </el-scrollbar>
         </el-main>
       </el-container>
     </el-container>
@@ -92,6 +103,17 @@ export default {
   components: {},
   data() {
     return {
+      //是否深色主题
+      isNight: false,
+      // 浅色背景颜色
+      dayBg: "#f9f9f9",
+      // 深色背景颜色
+      nightBg: "#232324",
+      //当前背景颜色
+      varBg: "#f9f9f9",
+      //板块背景颜色
+      mainBg: "#333333",
+
       //列表是否只保持一个子菜单的展开
       isMenuOpened: false,
       //当前窗口大小
@@ -99,6 +121,23 @@ export default {
       mobileMenuShow: true
     };
   },
+  methods: {
+    changeTheme() {
+      if (this.isNight) {
+        window.localStorage.setItem("theme", 1);
+      } else {
+        window.localStorage.setItem("theme", 0);
+      }
+    }
+  },
+  created() {
+    if (window.localStorage.getItem("theme") == 1) {
+      this.isNight = true;
+    } else {
+      this.isNight = false;
+    }
+  },
+
   mounted() {
     //监听窗口大小变化
 
@@ -130,62 +169,16 @@ body {
       #container {
         .index-container {
           .index-main {
-            .main-aside {
-              position: relative;
-              padding: 0 10px 10px 10px;
-              width: 300px;
-              min-height: 224px;
-              .tac {
-                position: fixed;
-                width: 280px;
-                ul {
-                  border: none;
-                  .el-submenu {
-                    // margin-bottom: 10px;
-                    background-color: #fff;
-                    .el-submenu__title {
-                      color: @tcolor;
-                      font-size: 14px;
-                      &:hover {
-                        // background-color: #afb3b9;
-                        background-color: #fff;
-                      }
-                      .fa {
-                        margin-right: 5px;
-                      }
-                      .el-submenu__icon-arrow {
-                        display: none;
-                      }
-                    }
-                    ul {
-                      .el-menu-item {
-                        color: @tcolor;
-                        font-size: 14px;
-                        background-color: #fff;
-                        &:hover {
-                          background-color: @bg;
-                          // color: @acolor;
-                          // color: #333;
-                          // font-weight: bold;
-                        }
-                        &.is-active {
-                          background-color: @bg;
-                          // color: @acolor;
-                          // color: #333;
-                          // font-weight: bold;
-                        }
-                        .fa {
-                          margin-right: 5px;
-                          padding-bottom: 3px;
-                        }
-                      }
-                    }
-                  }
+            
+            .main-center {
+              padding: 0;
+              .el-scrollbar {
+                padding: 0 40px;
+                .el-scrollbar__wrap {
+                  margin-right: -57px !important;
+                  padding-right: 40px;
                 }
               }
-            }
-            .main-center {
-              padding: 20px 40px 0;
             }
           }
         }
@@ -204,6 +197,11 @@ body {
             i.iconfont {
               display: block;
             }
+            div.theme {
+              display: block;
+              left: 30px;
+              top: 16px;
+            }
           }
           .index-main {
             .main-aside {
@@ -224,7 +222,26 @@ body {
             }
 
             .main-center {
-              padding: 20px 40px 0;
+              padding: 0;
+              .el-scrollbar {
+                padding: 0 40px;
+                .el-scrollbar__wrap {
+                  margin-right: -57px !important;
+                  padding-right: 40px;
+                }
+              }
+            }
+          }
+        }
+      }
+      //手机顶部导航样式
+      #container.night {
+        .index-container {
+          .index-main {
+            .main-aside {
+              .tac {
+                box-shadow: 0px 1px 6px 2px #242424;
+              }
             }
           }
         }
@@ -243,10 +260,16 @@ body {
             i.iconfont {
               display: block;
             }
+            .theme {
+              display: block;
+              left: 30px;
+              top: 16px;
+            }
           }
           .index-main {
             .main-aside {
               position: fixed;
+              
               //防止导航低于电影海报层级
               z-index: 997;
               padding: 0;
@@ -255,15 +278,37 @@ body {
               width: 100% !important;
               .tac {
                 position: fixed;
+                // position: absolute;
                 z-index: 998;
                 left: 0;
                 width: 100%;
+                // height: auto;
                 box-shadow: 0px 1px 8px 2px #999;
+                
               }
             }
 
             .main-center {
-              padding: 20px 20px 0;
+              padding: 0;
+              .el-scrollbar {
+                padding: 0 20px ;
+                .el-scrollbar__wrap {
+                  margin-right: -37px !important;
+                  padding-right: 20px;
+                }
+              }
+            }
+          }
+        }
+      }
+      //手机顶部导航样式
+      #container.night {
+        .index-container {
+          .index-main {
+            .main-aside {
+              .tac {
+                box-shadow: 0px 1px 6px 2px #242424;
+              }
             }
           }
         }
@@ -306,29 +351,45 @@ body {
           padding: 16px;
           font-size: 18px;
         }
+        .theme {
+          display: none;
+          position: absolute;
+          width: 40px;
+          height: 20px;
+          top: 16px;
+          right: 30px;
+        }
+        &:hover {
+          .theme {
+            display: block;
+          }
+        }
       }
 
       .index-main {
-        margin-top: 52px;
+        height: 100%;
+        // margin-top: 52px;
+        padding-top: 52px;
+        box-sizing: border-box;
         background-color: @bg;
         .main-aside {
-          position: relative;
+          // position: relative;
           padding: 0 10px 10px 10px;
           width: 300px;
-          min-height: 224px;
+          // min-height: 224px;
           .tac {
             position: fixed;
             width: 280px;
+            min-height: 224px;
             ul {
               border: none;
+              // height: auto;
               .el-submenu {
-                // margin-bottom: 10px;
-                background-color: #fff;
+                // background-color: #fff;
                 .el-submenu__title {
                   color: @tcolor;
                   font-size: 14px;
                   &:hover {
-                    // background-color: #afb3b9;
                     background-color: #fff;
                   }
                   .fa {
@@ -367,11 +428,104 @@ body {
         }
 
         .main-center {
-          padding: 20px 60px 0;
+          padding: 0;
           width: 100%;
           height: 100%;
           background-color: #fff;
+          .el-scrollbar {
+            padding: 0 60px ;
+            box-sizing: border-box;
+            .el-scrollbar__wrap {
+              margin-right: -77px !important;
+              padding-right: 60px;
+              padding-top: 20px;
+              
+          }
+          }
         }
+      }
+    }
+  }
+
+  #container.night {
+    background-color: @nightBg;
+    .index-container {
+      height: 100%;
+      .index-header {
+        background-color: @nightBg;
+        i {
+          color: #707070;
+        }
+      }
+
+      .index-main {
+        background-color: @nightBg;
+        .main-aside {
+          .tac {
+            ul {
+              .el-submenu {
+                background-color: @nightBk;
+                .el-submenu__title {
+                  &:hover {
+                    background-color: #393939;
+                  }
+                  .fa {
+                    color: @tcolor;
+                    margin-right: 5px;
+                  }
+                }
+                ul {
+                  .el-menu-item-group {
+                    .el-menu-item-group__title {
+                      color: #666;
+                      background-color: @nightBk;
+                    }
+                  }
+                  .el-menu-item {
+                    color: @tcolor;
+                    background-color: @nightBk;
+                    &:hover {
+                      background-color: #393939;
+                    }
+                    &.is-active {
+                      background-color: #393939;
+                    }
+                    .fa {
+                      color: @tcolor;
+                      margin-right: 5px;
+                      padding-bottom: 3px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .main-center {
+          background-color: @nightBk;
+        }
+      }
+    }
+  }
+  .night {
+    h2 {
+      color: #bbb;
+    }
+    h3,
+    h4,
+    h5 {
+      color: #999;
+    }
+    p {
+      color: #999;
+    }
+
+    .code {
+      color: #999;
+      background-color: #211f20;
+      &.jscode {
+        color: #00a08a;
       }
     }
   }

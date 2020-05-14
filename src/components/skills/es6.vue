@@ -39,7 +39,7 @@
 
     <div>
       <p>a. 对象属性变量式声明。ES6可以直接<span class="keyword">以变量形式声明对象属性或者方法</span>，。比传统的键值对形式声明更加简洁，更加方便，语义更加清晰。</p>
-      <div class="code">
+      <div class="code jscode">
         let [apple, orange] = ['red appe', 'yellow orange'];
         <br />
         let myFruits = {apple, orange};
@@ -49,7 +49,7 @@
         <br />
       </div>
       <p>尤其在对象解构赋值(见优化部分b.)或者模块输出变量时，这种写法的好处体现的最为明显:</p>
-      <div class="code">
+      <div class="code jscode">
         let {keys, values, entries} = Object;
         <br />
         let MyOwnMethods = {keys, values, entries};
@@ -59,7 +59,7 @@
         <br />
       </div>
       <p>可以看到属性变量式声明属性看起来更加简洁明了。方法也可以采用简洁写法：</p>
-      <div class="code">
+      <div class="code jscode">
         let es5Fun = {
         <br />
         <div :style="{paddingLeft:spacesize*1+'px'}">method: function(){ }</div>
@@ -74,12 +74,12 @@
 
     <div>
       <p>b. 对象的解构赋值。 ES6对象也可以像数组解构赋值那样，进行变量的解构赋值：</p>
-      <div class="code">
+      <div class="code jscode">
         let {apple, orange} = {apple: 'red appe', orange: 'yellow orange'};
         <br />
       </div>
       <p>c. 对象的扩展运算符(...)。 ES6对象的扩展运算符和数组扩展运算符用法本质上差别不大，毕竟数组也就是特殊的对象。对象的扩展运算符一个最常用也最好用的用处就在于可以轻松的取出一个目标对象内部全部或者部分的可遍历属性，从而进行对象的合并和分解。</p>
-      <div class="code">
+      <div class="code jscode">
         let {apple, orange, ...otherFruits} = {apple: 'red apple', orange: 'yellow orange', grape: 'purple grape', peach: 'sweet peach'};
         <br />
         <div class="code-notes">
@@ -124,7 +124,7 @@
 
     <div>
       <p>b. 函数默认赋值。ES6之前，函数的形参是无法给默认值得，只能在函数内部通过变通方法实现。ES6以更简洁更明确的方式进行函数默认赋值</p>
-      <div class="code">
+      <div class="code jscode">
         function es6Fuc (x, y = 'default') {
         <br />
         <div :style="{paddingLeft:spacesize*1+'px'}">console.log(x, y);</div>}
@@ -137,7 +137,7 @@
 
     <div>
       <p>ES6新增了双冒号运算符，用来取代以往的bind，call,和apply。(浏览器暂不支持，Babel已经支持转码)</p>
-      <div class="code">
+      <div class="code jscode">
         foo::bar;
         <br />
         <div class="code-notes">// 等同于</div>bar.bind(foo);
@@ -157,7 +157,7 @@
     <div>
       <p>答： Proxy是ES6新增的一个构造函数，可以理解为JS语言的一个代理，用来改变JS默认的一些语言行为，包括拦截默认的get/set等底层方法，使得JS的使用自由度更高，可以最大限度的满足开发者的需求。比如通过拦截对象的get/set方法，可以轻松地定制自己想要的key或者value。下面的例子可以看到，随便定义一个myOwnObj的key,都可以变成自己想要的函数。</p>
 
-      <div class="code">
+      <div class="code jscode">
        function createMyOwnObj() {
         <br />
         <div
@@ -259,15 +259,5 @@ export default {
 </script>
 
 <style lang="less">
-.es {
-  h2,
-  h3,
-  h4 {
-    color: #333;
-  }
 
-  div.code {
-    color: #00a08a;
-  }
-}
 </style>

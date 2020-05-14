@@ -1,15 +1,45 @@
 @bg:#f9f9f9;
+// 深色背景颜色
+@nightBg: #232324;
+// 深色板块颜色
+@nightBk: #333;
+
 @tcolor:#707070;
 @acolor:#008bfa;
 @cdcolor:#a9b2bf;
-@codebg:#333;
 @bgimg:url('./assets/img/binding-dark.png');
+
+// Tab空格
+.space-1 {
+    padding-left: 40px;
+}
+.space-2 {
+    padding-left: 80px;
+}
+.space-3 {
+    padding-left: 120px;
+}
+.space-3 {
+    padding-left: 160px;
+}
+.space-5 {
+    padding-left: 200px;
+}
+
 
 .code {
     padding: 10px;
     color: #c8c6c8;
     line-height: 30px;
     background-color: #211f20;
+    background-color: #333;
+    &.jscode {
+        color: #00a08a;
+        //符号 例如{}
+        .code-symbol {
+            color: #c8c6c8;
+        }
+    }
     .code-var {
         color:#d94359 ;
     }
@@ -35,5 +65,10 @@ a {
 .keyword {
     color: #f2546c;
 }
+h2 {
+    color: #333;
+}
 
-
+body .el-scrollbar__wrap {
+    overflow-x: hidden;
+}

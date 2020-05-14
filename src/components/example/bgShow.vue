@@ -33,11 +33,15 @@
 export default {
 data() {
     return {
-        tabSize:40
+      //代码空格
+        tabSize:40,
     }
 },
+
+
 };
 </script>
 
-<style>
+<style lang="less">
+
 </style>

@@ -6,32 +6,32 @@
     <p>2.如果需要定义全局变量，请安装</p>
     <div class="code">npm i style-resources-loader --save-dev</div>
     <p>3.在项目根目录(src同级)创建vue.config.js并配置</p>
-    <div class="code">
-      const path = require('path')<br>
-       function resolve (dir) { <br>
-       return path.join(__dirname, dir)<br>
-        } <br>
-        module.exports = { <br>
-        pluginOptions: { //第三方插件配置<br>
-       'style-resources-loader': { <br>
-       preProcessor: 'less',<br>
-        patterns:[path.resolve(__dirname, './src/assets/styles/vars.less')] //该地址为你的全局样式地址<br>
-         }<br>
-          }<br>
-           }
+    <div class="code jscode">
+      <div><span class="code-var">const</span> path = require<span class="code-symbol">(</span>'path'<span class="code-symbol">)</span></div>
+      <div><span class="code-var">function</span> resolve <span class="code-symbol">(</span>dir<span class="code-symbol">) {</span></div>
+      <div class="space-1"><span class="code-var">return</span> path.join<span class="code-symbol">(</span>__dirname, dir<span class="code-symbol">)</span></div>
+      <div class="code-symbol">}</div>
+      <div>module.exports = <span class="code-symbol">{</span></div>
+      <div class="space-1">pluginOptions: <span class="code-symbol">{</span> <span class="code-notes space-1">//第三方插件配置</span></div>
+      <div class="space-2">'style-resources-loader': <span class="code-symbol">{</span></div>
+      <div class="space-2">preProcessor: 'less',</div>
+      <div class="space-2">patterns:<span class="code-symbol">[</span><span class="code-symbol">(</span>, './src/assets/styles/vars.less'<span class="code-symbol">)]</span><span class="code-notes space-1"> //该地址为你的全局样式地址</span></div>
+      <div class="space-2 code-symbol">}</div>
+      <div class="space-1 code-symbol">}</div>
+      <div class="code-symbol">}</div>
     </div>
     <p>4.此时，可以去页面试一下了</p>
 
     <div class="code">
-      // vars.less <br>
-      @my-bg-color: #f5f5f5; <br>
-      @my-theme-color: #F04846;<br>
-<br>
-      <br>
-       // 页面<br>
-      .my-header{<br>
-       background: @my-theme-color;<br>
-        }
+     <span class="code-notes"> // vars.less</span>
+      <br />@my-bg-color: #f5f5f5;
+      <br />@my-theme-color: #F04846;
+      <br />
+      <br />
+      <br /><span class="code-notes">// 页面</span>
+      <br />.my-header{
+      <br />background: @my-theme-color;
+      <br />}
     </div>
     <p>
       遇到的坑
@@ -47,15 +47,5 @@ export default {};
 </script>
 
 <style lang="less">
-.less-variable {
-  p {
-    color: @tcolor;
-  }
-  .code {
-      padding-left: 10px;
-      line-height: 30px;
-      color: @cdcolor;
-      background-color: @codebg;
-  }
-}
+
 </style>

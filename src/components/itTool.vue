@@ -10,7 +10,7 @@
         ><a
           href="https://gitmind.cn/"
           target="_blank"
-          style="font-family: PingFangSC-Regular; font-size: 16px; background-color: rgb(252, 252, 252); letter-spacing: 0px;"
+          style="font-family: PingFangSC-Regular; font-size: 16px; letter-spacing: 0px;"
           ><b>GitMind</b></a
         >
       </h2>
@@ -31,7 +31,7 @@
           >2、<a
             href="https://www.baidufe.com/fehelper/index/index.html"
             target="_blank"
-            style="font-family: PingFangSC-Regular; font-size: 16px; background-color: rgb(252, 252, 252); letter-spacing: 0px;"
+            style="font-family: PingFangSC-Regular; font-size: 16px; letter-spacing: 0px;"
             >FeHelper</a
           ></b
         >
@@ -52,7 +52,7 @@
           >3、<a
             href="https://typora.io/"
             target="_blank"
-            style="font-family: PingFangSC-Regular; font-size: 16px; background-color: rgb(252, 252, 252); letter-spacing: 0px;"
+            style="font-family: PingFangSC-Regular; font-size: 16px; letter-spacing: 0px;"
             >Typora</a
           ></b
         >
@@ -76,7 +76,7 @@
           >4、<a
             href="https://www.sourcetreeapp.com/"
             target="_blank"
-            style="font-family: PingFangSC-Regular; font-size: 16px; background-color: rgb(252, 252, 252); letter-spacing: 0px;"
+            style="font-family: PingFangSC-Regular; font-size: 16px; letter-spacing: 0px;"
             >Sourcetree</a
           ></b
         >
@@ -97,7 +97,7 @@
           >5、<a
             href="https://airtest.netease.com/"
             target="_blank"
-            style="font-family: PingFangSC-Regular; font-size: 16px; background-color: rgb(252, 252, 252); letter-spacing: 0px;"
+            style="font-family: PingFangSC-Regular; font-size: 16px; letter-spacing: 0px;"
             >Airtes</a
           ></b
         >
@@ -123,7 +123,7 @@
           >6、<a
             href="https://code.visualstudio.com/"
             target="_blank"
-            style="font-family: PingFangSC-Regular; font-size: 16px; background-color: rgb(252, 252, 252); letter-spacing: 0px;"
+            style="font-family: PingFangSC-Regular; font-size: 16px; letter-spacing: 0px;"
             >Visual Studio Code</a
           ></b
         >
@@ -145,7 +145,7 @@
           >7、<a
             href="https://www.postman.com/"
             target="_blank"
-            style="font-family: PingFangSC-Regular; font-size: 16px; background-color: rgb(252, 252, 252); letter-spacing: 0px;"
+            style="font-family: PingFangSC-Regular; font-size: 16px; letter-spacing: 0px;"
             >Postman</a
           ></b
         >
@@ -171,7 +171,7 @@
           >8、<a
             href="https://copytranslator.github.io/"
             target="_blank"
-            style="font-family: PingFangSC-Regular; font-size: 16px; background-color: rgb(252, 252, 252); letter-spacing: 0px;"
+            style="font-family: PingFangSC-Regular; font-size: 16px; letter-spacing: 0px;"
             >CopyTranslator</a
           ></b
         >
@@ -191,7 +191,7 @@
           >9、<a
             href="https://tool.lu/"
             target="_blank"
-            style="font-family: PingFangSC-Regular; font-size: 16px; background-color: rgb(252, 252, 252); letter-spacing: 0px;"
+            style="font-family: PingFangSC-Regular; font-size: 16px; letter-spacing: 0px;"
             >Tool</a
           ></b
         >
@@ -214,7 +214,7 @@
           >10、<a
             href="https://mathpix.com/"
             target="_blank"
-            style="font-family: PingFangSC-Regular; font-size: 16px; background-color: rgb(252, 252, 252); letter-spacing: 0px;"
+            style="font-family: PingFangSC-Regular; font-size: 16px; letter-spacing: 0px;"
             >Mathpix Snip</a
           ></b
         >
@@ -245,15 +245,6 @@ export default {
 <style lang="less">
 .it-tool {
   width: 100%;
-  p {
-    // color: #333;
-    color: #707070;
-    font-size: 16px;
-  }
-h2 a {
-    // color: #007ca9;
-    color: #008bfa;
-}
   .img-alt-wap {
       margin: 0;
       padding: 0 20px;

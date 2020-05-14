@@ -27,13 +27,9 @@ export default {};
 .mega {
     width: 100%;
     .mega-item {
-        p {
-            color: @tcolor;
-            font-size: 16px;
-            
-        }
+        
         img {
-          width: 99%;
+          width: 100%;
         }
     }
 }

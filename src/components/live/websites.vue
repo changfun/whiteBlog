@@ -11,10 +11,10 @@
                 <div class="dec"><span class="label" v-for="(it, index) in item.label" :key="index">{{it}}</span></div>
             </div>
     </div>
-    <div class="site-item" ></div>
-    <div class="site-item" ></div>
-    <div class="site-item" ></div>
-    <div class="site-item" ></div>
+    <div class="site-item none" ></div>
+    <div class="site-item none" ></div>
+    <div class="site-item none" ></div>
+    <div class="site-item none" ></div>
 </div>
 </template>
 
@@ -48,7 +48,9 @@ export default {
         width: 236px;
         height: 244px;
         background-color: #fff;
-       
+       &.none {
+           opacity: 0;
+       }
             .site-icon {
                 width: 100%;
                 height: 140px;
